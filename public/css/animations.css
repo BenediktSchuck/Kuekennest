@@ -1,0 +1,35 @@
+.animate
+{
+    animation-duration:1s;
+    animation-fill-mode:both;
+}
+
+
+.animate--fast
+{
+    animation-duration: 0.5s;
+}
+
+.animate--slow
+{
+    animation-duration: 1.5s;
+}
+
+
+.slideInLeft
+{
+    animation-name: slideInLeft;
+    animation-timing-function:ease-in;
+}
+
+@keyframes slideInLeft
+{
+    from
+    {
+        transform: translateX(-1000px);
+    }
+    to
+    {
+        transform: translateX(0);
+    }
+}

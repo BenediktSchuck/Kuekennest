@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Erlaube den Zugriff auf den "static" Ordner
+    RewriteRule ^public/ - [L]
+    RewriteRule ^views/ - [L]
+
+
+    # Wenn die Anfrage auf eine Datei oder Verzeichnis zeigt, weiterleiten
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Ansonsten auf index.php umleiten, wenn es nicht im "static" Ordner ist
+    RewriteCond %{REQUEST_URI} !^/static/
+    RewriteRule ^ index.php [L]
+</IfModule>
